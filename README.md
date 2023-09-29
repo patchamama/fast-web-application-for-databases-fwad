@@ -4,13 +4,15 @@ The Spanish version of this documentation can be accessed [here](README.es.md)
 
 FWAD was developed between 2004-2006 in response to the development of an application that had to be adapted to plant collections from different botanic gardens, with different needs, meaning that a generic application meeting the needs of all botanic gardens was not possible and that the application would have to be adapted to different users (botanic collections) with different fields and sometimes different tables (database model).
 
-In order to meet these requirements, this program was created to read an easily modified xml configuration file that would allow the program to quickly adapt to the conditions of each desired data model without having to make changes in the program code, and that is where the idea for this program came from, which is nothing more than an interpreter of configuration files (xml) and which generates forms and queries depending on this file.
+In order to meet these requirements, this program was created to read an easily modified _xml configuration file_ that would allow the program to quickly adapt to the conditions of each desired data model without having to make changes in the main program code, and that is where the idea for this program came from, which is nothing more than an interpreter of configuration files (xml) and which generates forms and queries (similar to a modernORM) depending on this configuration file.
 
-I have an ambiguous relationship with this application because on the one hand I am proud of the functionality achieved and the most intelligent solution thought to meet the necessary requirements, but on the other hand due to the lack of experience in programming at this level of such a complex program, it was done without taking into account the use of php frameworks (only jQuery was used) and using a simple text editor like [notepad++](https://notepad-plus-plus.org) and the main app code (`run.php`) does not use _clean coding_ principles and is spaghetti code which can make it difficult to understand and maintain. _In addition, the application was made entirely in Cuba without internet access and using documentation contained in books or pdfs._
+I have an ambiguous relationship with this application because on the one hand I am proud of the functionality achieved and the most intelligent solution thought to meet the necessary requirements (based of a app that read a general xml configuration file and change it behaivor...), but on the other hand due to the lack of experience in programming at this level of such a complex program, it was done without taking into account the use of php frameworks (only jQuery was used) and using a simple text editor like [notepad++](https://notepad-plus-plus.org), so the main app code (`run.php`) does not use _clean coding_ principles and is _spaghetti code_ with more than 6000 lines which can make it difficult to understand and maintain. _In addition, the application was made entirely in Cuba without internet access and using documentation contained in books or pdfs._
 
 # Objectives
 
 The ultimate goal of the application, in addition to achieving rapid development, was also to generate biological collection exchange files (xml files) that allow the exchange of information from _living collections_ (ITF2) and _preserved collections_ (HISPID3), to make accessible and encourage global exchange between collections of information as part of the GBIF network.
+
+The programme is not only limited to managing plant collections and has subsequently been used for a cocktail database and for language learning (these examples will be added as the application is migrated to more modern versions of p
 
 # Tests carried out
 
@@ -47,7 +49,7 @@ node server.js
 
 ## Instal php multiplatform (XAMPP)
 
-Instructions [here](https://www.apachefriends.org/download.html)
+Instructions, as an alternative for use on windows, linux and also on MacOSx [here](https://www.apachefriends.org/download.html)
 
 # Pending
 

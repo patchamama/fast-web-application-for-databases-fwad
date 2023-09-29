@@ -8,9 +8,11 @@ Para poder cumplir con estos requerimientos, se generó este programa que debía
 
 Tengo una relación ambigua con este programa pues por una parte estoy orgulloso de las funcionalidades logradas y la solución más inteligente pensada para cumplir con los requerimientos necesarios, pero por otro lado por la falta de experiencia en programación a este nivel de un programa tan complejo, se realizó sin tener en cuenta el uso de frameworks de php (solo se usó jQuery) y usando un editor de texto simple como [notepad++](https://notepad-plus-plus.org) y el código del programa principal (`run.php`) no usa principios de código limpio siendo un código espagueti que puede dificultar su entendimiento y mantenimiento. _Adicionalmente la aplicación fue hecho completamente en Cuba sin un acceso a internet y valiéndome de documentación contenida en libros o pdfs._
 
-# Objetivo
+# Objetivos
 
 El objetivo final de la aplicación (FWAD), además de lograr un desarrollo rápido, también era generar archivos de intercambios de colecciones biológicas (archivos en formato xml) que permitan el intercambio de información de _colecciones vivas_ (ITF2) y de _colecciones conservadas_ (HISPID3), para hacer accesible y fomentar el intercambio mundial entre colecciones de información como parte de la red GBIF.
+
+El programa no solamente se limita a gestionar colecciones de plantas y ha sido usado posteriormente para una base de datos de cocteles y para aprendizaje de idioma (estos ejemplos se agregaran en la medida que se migre la aplicación a versiones más modernas de php).
 
 # Pruebas de la aplicación
 
