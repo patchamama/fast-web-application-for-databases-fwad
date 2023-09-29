@@ -7,9 +7,9 @@ if (isset($_REQUEST['stclear']))
 	}
 
 $vfunctions = array("All","urlencode","urldecode","utf8_encode","utf8_decode","htmlentities","htmlspecialchars","strtolower",
-					"rawurlencode","addslashes","stripslashes","stripcslashes","quotemeta","htmlspecialchars","nl2br","imap_qprint",
-					"base64_decode","base64_encode","imap_base64","md5","sha1","crc32","bin2hex","convert_uuencode",
-					"crypt","soundex","strip_tags");
+					"rawurlencode","addslashes","stripslashes","stripcslashes","quotemeta","htmlspecialchars","nl2br",
+					"base64_decode","base64_encode", "md5","sha1","crc32","bin2hex","convert_uuencode",
+					"soundex","strip_tags");
 
 //Download Text					
 if ( (isset($_POST["functaction"])) && (isset($_POST["Download"])) )
@@ -71,7 +71,7 @@ if ( (isset($_POST["functaction"])) && (isset($_POST["showpage"])) )
 		?>
 	</select>
 	<input value="Submit" type="submit" />
-	<br>¿Delete the slasches characters that sometimes are inserted? <input name="stclear" type="checkbox" value="1" <?php echo (isset($_REQUEST['stclear']))? 'checked' : ''; ?>> 
+	<br>Delete the slasches characters that sometimes are inserted? <input name="stclear" type="checkbox" value="1" <?php echo (isset($_REQUEST['stclear']))? 'checked' : ''; ?>> 
 	</p>
 </td></tr></table>
 
@@ -116,6 +116,5 @@ echo "</table>";
 //phpinfo();
 ?>
 </form>
-<br><a href="http://templo/tools/regextool.php">Expresiones regulares</a> <br>
 </body>
 </html>

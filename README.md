@@ -2,7 +2,7 @@
 
 The Spanish version of this documentation can be accessed [here](README.es.md)
 
-FWAD was developed between 2005-2006 in response to the development of an application that had to be adapted to plant collections from different botanic gardens, with different needs, meaning that a generic application meeting the needs of all botanic gardens was not possible and that the application would have to be adapted to different users (botanic collections) with different fields and sometimes different tables (database model).
+FWAD was developed between 2004-2006 in response to the development of an application that had to be adapted to plant collections from different botanic gardens, with different needs, meaning that a generic application meeting the needs of all botanic gardens was not possible and that the application would have to be adapted to different users (botanic collections) with different fields and sometimes different tables (database model).
 
 In order to meet these requirements, this program was created to read an easily modified xml configuration file that would allow the program to quickly adapt to the conditions of each desired data model without having to make changes in the program code, and that is where the idea for this program came from, which is nothing more than an interpreter of configuration files (xml) and which generates forms and queries depending on this file.
 
@@ -18,7 +18,7 @@ The application was tested for several years in the botanic gardens and several 
 
 # Develop
 
-### Install php (Mac Os)
+## Install php (Mac Os)
 
 ```
 brew tap shivammathur/php
@@ -29,7 +29,22 @@ brew link --overwrite --force shivammathur/php/php@5.6
 php --version
 ```
 
-### Instal php multiplatform (XAMPP)
+### Install nodeJS Server (light and fast server)
+
+_References: https://github.com/paragi/sphp_
+
+```
+npm install sphp express express-session ws body-parser
+# 1 Test the server
+node node_modules/sphp/example.js
+# Connect to the example server in a browser: http://localhost:8080
+
+# 2 Test the server in root directory
+node server.js
+# Open the browser in url: http://localhost:8080/string_encode.php
+```
+
+## Instal php multiplatform (XAMPP)
 
 Instructions [here](https://www.apachefriends.org/download.html)
 
@@ -48,3 +63,4 @@ Instructions [here](https://www.apachefriends.org/download.html)
 - International transfer format for botanical garden plant records. Vers. 2: http://www.bgci.org/files/Databases/itf2.pdf
 - A Mapping of HISPID3 to ABCD 1.49d: https://www.bgbm.org/tdwg/codata/Schema/Mappings/HISPID3.htm
 - GBIF | Global Biodiversity Information FAcility: Free and open access to biodiversity data: https://www.gbif.org/
+- Snappy PHP for nodeJS: https://github.com/paragi/sphp

@@ -2,7 +2,7 @@
 
 La versión en inglés (más completa) de esta documentación es accesible desde [aquí](README.md)
 
-FWAD fue desarrollada entre el 2005-2006 como respuesta al desarrollo de una aplicación que debía de adaptarse a colecciones de plantas de diferentes jardines botánicos, con diferentes necesidades, lo que significa que una aplicación genérica que cumpliera las necesidades de todos los jardines botánicos no era posible y que habría que adaptar la aplicación a los diferentes usuarios (colecciones botánicas) con diferentes campos y a veces diferentes tablas (modelo de la base de datos).
+FWAD fue desarrollada entre el 2004-2006 como respuesta al desarrollo de una aplicación que debía de adaptarse a colecciones de plantas de diferentes jardines botánicos, con diferentes necesidades, lo que significa que una aplicación genérica que cumpliera las necesidades de todos los jardines botánicos no era posible y que habría que adaptar la aplicación a los diferentes usuarios (colecciones botánicas) con diferentes campos y a veces diferentes tablas (modelo de la base de datos).
 
 Para poder cumplir con estos requerimientos, se generó este programa que debía de leer un archivo xml de configuración y de fácil modificación que permitiera al programa de forma rápida adaptarse a las condiciones de cada modelo de datos deseados sin tener que hacer cambios en el código del programa y de ahí salió la idea de este programa, que no es más que un intérprete de archivos de configuración (xml) y que genera los formularios y consultas en dependencia de este archivo.
 

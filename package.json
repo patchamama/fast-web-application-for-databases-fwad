@@ -1,0 +1,24 @@
+{
+  "name": "fwad",
+  "version": "1.0.0",
+  "description": "Fast Web Application of Databases (FWAD)",
+  "main": "server.js",
+  "start": "node server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "phpcgijs": "^1.2.0",
+    "sphp": "^0.6.3",
+    "ws": "^8.14.2"
+  }
+}
