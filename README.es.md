@@ -2,6 +2,12 @@
 
 La versión en inglés (más completa) de esta documentación es accesible desde [aquí](README.md)
 
+**ESTE PROGRAMA NO ES FUNCIONAL CON LAS ACTUALES VERSIONES MÁS MODERNAS DE PHP**. La aplicación funcionaba con php 5.5 y se ejecutó en computadoras con windows usando [XAMPP](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/5.5.27/)
+
+He subido el contenido del proyecto a Github por sí le es útil a alguien y para actualizar el programa en varias fases que permita ser ejecutado en versiones de php más modernas (con las mejoras de seguridad) y para crear un diseño web más moderno.
+
+---
+
 FWAD fue desarrollada entre el 2004-2006 como respuesta al desarrollo de una aplicación que debía de adaptarse a colecciones de plantas de diferentes jardines botánicos, con diferentes necesidades, lo que significa que una aplicación genérica que cumpliera las necesidades de todos los jardines botánicos no era posible y que habría que adaptar la aplicación a los diferentes usuarios (colecciones botánicas) con diferentes campos y a veces diferentes tablas (modelo de la base de datos).
 
 Para poder cumplir con estos requerimientos, se generó este programa que debía de leer un archivo xml de configuración y de fácil modificación que permitiera al programa de forma rápida adaptarse a las condiciones de cada modelo de datos deseados sin tener que hacer cambios en el código del programa y de ahí salió la idea de este programa, que no es más que un intérprete de archivos de configuración (xml) y que genera los formularios y consultas en dependencia de este archivo.
