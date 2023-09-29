@@ -33,6 +33,14 @@ php --version
 
 Instructions [here](https://www.apachefriends.org/download.html)
 
+# Pending
+
+- Migrate the entire application to a more modern version of php such as version 7 or 8.
+- Refactor all the code and separate it into files (libraries) to allow better code reuse and maintenance.
+- Migrate the application for use with a modern php framework such as `Symfony` or `Laravel`, or separate the application into a REST API on the back end using these frameworks or other faster frameworks such as `Phalcon` or `Slim` and a more modern web interface design such as `React` or `VueJS` for the View.
+- Change the use of database connection drivers from AdoDB to a more modern one.
+- Use a modern ORM (and replace the one programmed in the application).
+
 # Credits
 
 - How to install php 5.6 with homebrew if from this year it is EOL?: https://stackoverflow.com/questions/54143760/how-to-install-php-5-6-with-homebrew-if-from-this-year-it-is-eol

@@ -15,3 +15,11 @@ El objetivo final de la aplicación (FWAD), además de lograr un desarrollo ráp
 # Pruebas de la aplicación
 
 La aplicación se probó durante varios años en los jardines botánicos y se hicieron varios talleres con los usuarios/operadores (con una duración de una semana cada taller) en que se hicieron mejoras continuas a la aplicación núcleo (FWAD) para cumplir con las necesidades diversas solicitadas.
+
+# Pendiente
+
+- Migrar toda la aplicación a una versión más moderna de php como la versión 7 u 8
+- Refactorizar todo el código y separarlo en archivos (librerías) que permita un mejor reuso del cógido y su mantenimiento
+- Migrar la aplicación para su uso con algún framework moderno de php como `Symfony` o `Laravel`, o separar la aplicación en una API REST en el Back End usando estos frameworks u otros más rápicos como `Phalcon` o `Slim` y un diseño de interface web más moderna como `React` o `VueJS` para la Vista.
+- Cambiar el uso de las drivers de conexión a la base de datos de AdoDB a otra más moderna.
+- Usar un ORM moderno (y sustituir el programado en la aplicación)
