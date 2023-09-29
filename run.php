@@ -14,7 +14,7 @@
 
 // File           run.php / Phyllacanthus
 // Purpose        Edit any structure defined in a xml file, is posible actions as save, insert, search
-// Author         Armando Urquiola Cabrera (urquiolaf@hotmail.com), has bien created based in the software ibWebAdmin (c) 2000, 2001, 2002, 2003, 2004 by Lutz Brueckner
+// Author         Armando Urquiola Cabrera (urquiolaf@hotmail.com), has been created based in the software ibWebAdmin (c) 2000, 2001, 2002, 2003, 2004 by Lutz Brueckner
 // Version        6.10
 //
 
@@ -6777,16 +6777,6 @@ $(document).ready(function()
 
 //print "<pre>"; print_r($HTTP_PARAM_VARS); print "</pre>";
 //print "<pre>"; print_r($_GET); print "</pre>";
-
-
-
 ?>
-
 </body>
 </html>
-
-
-
-
-
-

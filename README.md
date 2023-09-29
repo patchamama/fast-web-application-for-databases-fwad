@@ -18,11 +18,12 @@ The application was tested for several years in the botanic gardens and several 
 
 # Develop
 
-## Install php (Mac Os)
+## Install php and nodeJS (MacOs)
 
 ```
 brew tap shivammathur/php
 brew install shivammathur/php/php@5.6
+brew install node
 
 # point php to the 5.6 install
 brew link --overwrite --force shivammathur/php/php@5.6
@@ -64,3 +65,4 @@ Instructions [here](https://www.apachefriends.org/download.html)
 - A Mapping of HISPID3 to ABCD 1.49d: https://www.bgbm.org/tdwg/codata/Schema/Mappings/HISPID3.htm
 - GBIF | Global Biodiversity Information FAcility: Free and open access to biodiversity data: https://www.gbif.org/
 - Snappy PHP for nodeJS: https://github.com/paragi/sphp
+- Execute PHP scripts within Node.js web server: https://stackoverflow.com/questions/6542169/execute-php-scripts-within-node-js-web-server
