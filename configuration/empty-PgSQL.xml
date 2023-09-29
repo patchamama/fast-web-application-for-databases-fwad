@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Main>
+  <connection>
+    <db hostname="127.0.0.1" database="" type="mysql" user="root">
+      <register hostname="127.0.0.1" database="" type="mysql" user="root"/>
+    </db>
+  </connection>
+</Main>

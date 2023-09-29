@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- 
+Archivo de configuraciOn de pAgina web de trabajo del JBPR
+
+Host->
+  BD firebird, user, pasword ImageLink->http path de fotos --> 
+<WebConfig> 
+	<Host username="SYSDBA" password = "masterkey">localhost:__pathApp__/databases/collman.gdb</Host>
+	<Image width="98" height="96" cols="5">fotos%2F</Image>
+	
+	<configuration ShowCount="15" ShowBlank="false"></configuration>
+	<Show> 
+		<checkWeb name="Web" value="1">Este sitio web*</checkWeb>
+		<SearchSQLWeb>select "GroupId", "GroupName", "ParentYN", "Title", "Link", "LinkId", "LinkIdOrder", "Image_link", "GroupIdOrder" from "tblwww" left join "tblwww_link" on ("tblwww"."wwwId"="tblwww_link"."wwwFk") where ((upper("GroupName") like '%__textoUpper__%') or (upper("Title") like '%__textoUpper__%')) order by "GroupName"</SearchSQLWeb>
+
+		<checkIk name="Ik" value="1">Nombres de taxa (Index Kewensis)*</checkIk>
+ 		<SearchSQLIk>select "NameId", "FullNameCache" from "tblMoretax_Name" where "FullNameCache" like '__texto__%' order by "FullNameCache"</SearchSQLIk>
+		<cnfIk count="3"></cnfIk>
+		<SQLIk Order="1" Resume="false">SELECT "tblMoretax_Rank"."Rank", "tblMoretax_Name"."NameCache", "tblMoretax_Name"."UnnamedNamePhrase",
+			"tblMoretax_Name"."FullNameCache", "tblMoretax_Name"."SupragenericName", "tblMoretax_Name"."Genus",
+			"tblMoretax_Name"."GenusSubdivisionEpi", "tblMoretax_Name"."SpeciesEpi", "tblMoretax_Name"."InfraSpeciesEpi",
+			"tblMoretax_Name"."MonomHybFlag", "tblMoretax_Name"."CultivarGroupName",
+			"tblMoretax_Name"."CultivarName", "tblMoretax_Name"."NameCache", "tblMoretax_AuthorTeam"."AuthorTeamCache" as "AuthorTeamC","tblMoretax_Name"."AuthorTeamFk",
+			"ExAuthorTeam"."AuthorTeamCache" as "ExAuthorTeamC", "tblMoretax_Name"."ExAuthorTeamFk", "BasAuthorTeam"."AuthorTeamCache" as "BasAuthorTeamC","tblMoretax_Name"."BasAuthorTeamFk", "ExBasAuthorTeam"."AuthorTeamCache" as "ExBasAuthorTeamC", "tblMoretax_Name"."ExBasAuthorTeamFk" FROM
+			("tblMoretax_AuthorTeam" "ExBasAuthorTeam" RIGHT JOIN ("tblMoretax_AuthorTeam" "BasAuthorTeam" RIGHT JOIN
+			("tblMoretax_AuthorTeam" "ExAuthorTeam" RIGHT JOIN ("tblMoretax_AuthorTeam" RIGHT JOIN "tblMoretax_Name" ON
+			"tblMoretax_AuthorTeam"."AuthorTeamId" = "tblMoretax_Name"."AuthorTeamFk") ON "ExAuthorTeam"."AuthorTeamId" =
+			"tblMoretax_Name"."ExAuthorTeamFk") ON "BasAuthorTeam"."AuthorTeamId" = "tblMoretax_Name"."BasAuthorTeamFk") ON
+			"ExBasAuthorTeam"."AuthorTeamId" = "tblMoretax_Name"."ExBasAuthorTeamFk") INNER JOIN "tblMoretax_Rank" ON
+			"tblMoretax_Name"."RankFk" = "tblMoretax_Rank"."RankId" WHERE "tblMoretax_Name"."NameId"=</SQLIk>
+		<SQLIk Order="2" Resume="false">SELECT "tblMoretax_Reference"."NomRefCache", "tblMoretax_NameRefIk"."Notes"
+			FROM ("tblMoretax_NameRefIk" INNER JOIN "tblMoretax_Name" ON "tblMoretax_NameRefIk"."NameFk" = "tblMoretax_Name"."NameId") INNER JOIN "tblMoretax_Reference" ON "tblMoretax_NameRefIk"."RefFk" = "tblMoretax_Reference"."RefId"
+			where "NameId"=</SQLIk>	
+		<SQLIk Order="3" Resume="false">SELECT "tblMoretax_Name"."NameId","tblMoretax_Rank"."Rank", "tblMoretax_Name"."FullNameCache" FROM "tblMoretax_Rank" INNER JOIN
+			("tblMoretax_Name" INNER JOIN "tblMoretax_RelPTaxon" ON "tblMoretax_Name"."NameId" =
+			"tblMoretax_RelPTaxon"."PTNameFk2") ON "tblMoretax_Rank"."RankId" = "tblMoretax_Name"."RankFk" WHERE
+			"tblMoretax_RelPTaxon"."PTNameFk1"=</SQLIk>
+		<SQLIk Order="4" Resume="false">SELECT "tblMoretax_Name"."NameId","tblMoretax_Rank"."Rank", "tblMoretax_Name"."FullNameCache" FROM "tblMoretax_Rank" INNER JOIN
+			("tblMoretax_Name" INNER JOIN "tblMoretax_RelPTaxon" ON "tblMoretax_Name"."NameId" =
+			"tblMoretax_RelPTaxon"."PTNameFk1") ON "tblMoretax_Rank"."RankId" = "tblMoretax_Name"."RankFk" WHERE
+			"tblMoretax_RelPTaxon"."PTNameFk2"=</SQLIk>		
+		<ShowIk Order="1" field="Rank">Rango:</ShowIk>
+		<ShowIk Order="1" field="NameCache">Nombre:</ShowIk>
+		<ShowIk Order="1" field="UnnamedNamePhrase">Nombre sin nomenclatura:</ShowIk>
+		<ShowIk Order="1" field="FullName">Nombre completo:</ShowIk>
+		<ShowIk Order="1" field="SupragenericName">Categor%EDa supragen%E9rica:</ShowIk>
+		<ShowIk Order="1" field="Genus">G%E9nero:</ShowIk>
+		<ShowIk Order="1" field="GenusSubdivisionEpi">Categor%EDa Infragen%E9rica:</ShowIk>
+		<ShowIk Order="1" field="SpeciesEpi">Ep%EDteto espec%EDfico:</ShowIk>
+		<ShowIk Order="1" field="InfraSpeciesEpi">EpIteto InfraespecIfico:</ShowIk>
+		<ShowIk Order="1" field="AuthorTeamC" href="portal.php%3FAction%3DShowAuthorTeam%26id%3D" vref="AuthorTeamFk">Autores:</ShowIk>
+		<ShowIk Order="1" field="ExAuthorTeamC" href="portal.php%3FAction%3DShowAuthorTeam%26id%3D" vref="AuthorTeamFk">Exautores:</ShowIk>
+		<ShowIk Order="1" field="BasAuthorTeamC" href="portal.php%3FAction%3DShowAuthorTeam%26id%3D" vref="AuthorTeamFk">Autores del basionimo:</ShowIk>
+		<ShowIk Order="1" field="ExBasAuthorTeamC" href="portal.php%3FAction%3DShowAuthorTeam%26id%3D" vref="AuthorTeamFk">Exautores del basionimo:</ShowIk>
+		<ShowIk Order="1" field="CultivarGroupName">Grupo cultivar:</ShowIk>
+		<ShowIk Order="1" field="CultivarName">Nombre del cultivar:</ShowIk>
+		<ShowIk Order="1" field="NameNotes" memo="true">Notas:</ShowIk>
+		<ShowIk Order="2" field="NomRefCache">Referencia:</ShowIk>
+		<ShowIk Order="2" field="Notes" memo="true">Notas en la referencia:</ShowIk>
+		<ShowIk Order="3" field="Rank">Rango superior:</ShowIk>
+		<ShowIk Order="3" field="FullNameCache" href="portal.php%3FAction%3DShowIk%26id%3D" vref="NameId">Nombre del nivel superior:</ShowIk>
+		<ShowIk Order="4" field="Rank">Rango inferior:</ShowIk>
+		<ShowIk Order="4" field="FullNameCache" href="portal.php%3FAction%3DShowIk%26id%3D" vref="NameId">Nombre del nivel inferior:</ShowIk>
+
+		<checkAut name="Aut" value="1">Autores (Index Kewensis)*</checkAut>
+		<SearchSQLAut>select "AuthorId", "Abbrev", "FullName" from "tblMoretax_Author" where ("FullName" like '%__texto__%') or ("Abbrev" like '%__texto__%') order by "FullName"</SearchSQLAut>
+		<cnfAut count="1"></cnfAut>
+		<SQLAut>select "Notes","DeathDate","BirthDate","NomStandard","LastName","MiddleName","FirstName","Abbrev","Initials", "InterestDesc" FROM "tblMoretax_Author_InterestQ" RIGHT JOIN "tblMoretax_Author" ON "tblMoretax_Author_InterestQ"."InterestCod" = "tblMoretax_Author"."AreaOfInterestFk" where "AuthorId" = </SQLAut>
+		<ShowAut field="Abbrev">Abreviatura:</ShowAut>
+		<ShowAut field="Initials">Iniciales:</ShowAut>
+		<ShowAut field="FirstName">Primer nombre:</ShowAut>
+		<ShowAut field="MiddleName">Segundo nombre:</ShowAut>
+		<ShowAut field="LastName">Apellidos:</ShowAut>
+		<ShowAut field="InterestDesc">Area de interEs:</ShowAut>
+		<ShowAut field="NomStandard">Nombre estAndar usado:</ShowAut>
+		<ShowAut field="BirthDate">Fecha de nacimiento:</ShowAut>
+		<ShowAut field="DeathDate">Fecha de muerte:</ShowAut>
+		<ShowAut field="Notes" memo="true">Notas:</ShowAut>
+		
+		<checkContact name="Cont" value="1">Contactos*</checkContact>
+		<SearchSQLContact>select "ContactId", "FullName","PhotoLink", "Address", "Title", "WorkPhone","EmailName", "WWWAddress", "Notes", "ContactDesc" from "tblContacts" left join "tblContacts_TypeQualifier" on "tblContacts"."ContactTypeFk" ="tblContacts_TypeQualifier"."ContactTypeId" where ((upper("FullName") like '%__textoUpper__%') or ("Notes" like '%__texto__%') or (upper("Abbrev") like '%__textoUpper__%')) order by "FullName"</SearchSQLContact>
+		<cnfContact count="1"></cnfContact>
+		<SQLContact>select "ContactId", "FullName","PhotoLink", "Address", "Title", 
+			"WorkPhone","EmailName", "WWWAddress", "Notes", "ContactDesc" from "tblContacts" 
+			left join "tblContacts_TypeQualifier" on "tblContacts"."ContactTypeFk" 
+			="tblContacts_TypeQualifier"."ContactTypeId" where "ContactId" = </SQLContact>
+		<ShowContact field="FullName">Nombre:</ShowContact>
+		<ShowContact field="Title">TItulo:</ShowContact>
+		<ShowContact field="ContactDesc">Tipo de contacto:</ShowContact>
+		<ShowContact field="EmailName" href="mailto:" vref="EmailName">Email:</ShowContact>
+		<ShowContact field="WWWAddress" href="" vref="WWWAddress">Web Personal:</ShowContact>
+		<ShowContact field="Address" memo="true">DirecciOn:</ShowContact>
+		<ShowContact field="Notes" memo="true">Notas:</ShowContact>
+
+		<checkImg name="Img" value="1">Imagenes*</checkImg>
+		<SearchSQLImg>select "ImageId", "Folder", "FileName", "SourceTypeFk", "PersonFk", "DateString", "Quality", "Description", "SourceTypeDesc", "TeamCache" from ("tblImages" left join "tblImages_SourceTypeQualifier" on ("tblImages"."SourceTypeFk"="tblImages_SourceTypeQualifier"."SourceTypeId")) left join "tblContactsTeam"  on "tblImages"."PersonFk"="tblContactsTeam"."TeamId" where ("Description" like '%__texto__%') order by "Description"</SearchSQLImg>
+		
+		<checkEve name="Eve" value="1">Eventos</checkEve>
+		
+		<checkBib name="Bib" value="1">BibliografIa</checkBib>
+		
+		<checkIHer name="IHer" value="1">Index Herbariorum</checkIHer>
+		
+		<checkCol name="Col" value="1">Colecciones vivas (CollMan)</checkCol>
+		
+		<cnfAuthorTeam count="1"></cnfAuthorTeam>
+		<SQLAuthorTeam Order="1" Resume="false">SELECT "tblMoretax_Author"."Abbrev", "tblMoretax_Author"."Initials", "tblMoretax_Author"."FirstName",
+			"tblMoretax_Author"."LastName", "tblMoretax_Author"."MiddleName", "tblMoretax_Author"."FullName",
+			"tblMoretax_Author"."Dates", "tblMoretax_Author"."AreaOfInterestFk", "tblMoretax_Author"."NomStandard",
+			"tblMoretax_Author"."BirthDate", "tblMoretax_Author"."DeathDate", "tblMoretax_Author"."Notes",
+			"tblMoretax_Author_InterestQ"."InterestDesc" FROM "tblMoretax_Author_InterestQ" RIGHT JOIN
+			(("tblMoretax_AuthorTeam" right JOIN "tblMoretax_AuthorTeamSequence" ON "tblMoretax_AuthorTeam"."AuthorTeamId"
+			= "tblMoretax_AuthorTeamSequence"."AuthorTeamFk")  RIGHT JOIN "tblMoretax_Author" ON
+			"tblMoretax_AuthorTeamSequence"."AuthorFk" = "tblMoretax_Author"."AuthorId") ON
+			"tblMoretax_Author_InterestQ"."InterestCod" = "tblMoretax_Author"."AreaOfInterestFk" WHERE
+			"tblMoretax_AuthorTeam"."AuthorTeamId"=</SQLAuthorTeam>	
+		<ShowAuthorTeam Order="1" field="Abbrev">Abreviatura:</ShowAuthorTeam>
+		<ShowAuthorTeam Order="1" field="Initials">Iniciales:</ShowAuthorTeam>
+		<ShowAuthorTeam Order="1" field="FirstName">Primer nombre:</ShowAuthorTeam>
+		<ShowAuthorTeam Order="1" field="MiddleName">Segundo nombre:</ShowAuthorTeam>
+		<ShowAuthorTeam Order="1" field="LastName">Apellidos:</ShowAuthorTeam>
+		<ShowAuthorTeam Order="1" field="AreaOfInterestFk">Area de interEs:</ShowAuthorTeam>
+		<ShowAuthorTeam Order="1" field="NomStandard">Nombre estAndar usado:</ShowAuthorTeam>
+		<ShowAuthorTeam Order="1" field="BirthDate">Fecha de nacimiento:</ShowAuthorTeam>
+		<ShowAuthorTeam Order="1" field="DeathDate">Fecha de muerte:</ShowAuthorTeam>
+		<ShowAuthorTeam Order="1" field="Notes" memo="true">Notas:</ShowAuthorTeam>
+		
+		<checkPhyllaca name="Phyllaca" value="1">Phyllacanthus*</checkPhyllaca>
+		<SearchSQLPhyllaca>select "PlantId", "FullName", "ImageId"*0 as "IsImage", count(*) as "Cant" from ("tblPlant" LEFT JOIN ("tblPlant_Images" LEFT JOIN "tblImages" ON "tblImages"."ImageId" = "tblPlant_Images"."ImageFk") ON "tblPlant"."PlantId" = "tblPlant_Images"."PlantFk") where (upper("FullName") like '%__textoUpper__%')  or ("PlantId" in (select "PlantFk" from "tblPlant_ComunName" where upper("Vernam") like '%__textoUpper__%')) group by 1,2,3 order by "FullName"</SearchSQLPhyllaca>
+		<cnfPhyllaca count="7"></cnfPhyllaca>
+		<SQLPhyllaca Order="1" comment="" Resume="false">select "tblPlant_RkqlQualifier"."rkqlDesc", "tblPlant"."FullName", "tblPlant_Phyllaca"."Endangered", "tblPlant_IUCNPost94Qualifier"."IUCNDesc", "tblPlant_PhyBiologTQualifier"."BiologType", "tblPlant_PhyHabitQualifier"."HabitDesc", "tblPlant_Phyllaca"."Corology", "tblPlant_Phyllaca"."Endemic", "tblPlant_PhyWordDistQualifier"."WordDistribDesc" from ("tblPlant_RkqlQualifier" RIGHT JOIN ("tblPlant_PhyWordDistQualifier" RIGHT JOIN ("tblPlant_PhyHabitQualifier" RIGHT JOIN ("tblPlant_PhyBiologTQualifier" RIGHT JOIN ("tblPlant_Phyllaca" RIGHT JOIN ("tblPlant" LEFT JOIN "tblPlant_IUCNPost94Qualifier" ON "tblPlant"."iucn_1994Fk" = "tblPlant_IUCNPost94Qualifier"."IUCNPostId") ON "tblPlant"."PlantId" = "tblPlant_Phyllaca"."PlantFk") ON "tblPlant_Phyllaca"."BiologTypeFk" = "tblPlant_PhyBiologTQualifier"."BiologTypeId") ON "tblPlant_Phyllaca"."HabitFk" = "tblPlant_PhyHabitQualifier"."HabitId") ON "tblPlant_Phyllaca"."WorldDistribFk" = "tblPlant_PhyWordDistQualifier"."WordDistribId") ON "tblPlant"."rkqlFk" = "tblPlant_RkqlQualifier"."rkqlCod") where "PlantId" =</SQLPhyllaca>	
+		<SQLPhyllaca Order="2" Resume="true">select "tblPlant_ComunName"."Vernam" from "tblPlant_ComunName" where "PlantFk"=</SQLPhyllaca>	
+		<SQLPhyllaca Order="3" Resume="true">select "tblPlant_UsesQualifier"."UsesDesc" from "tblPlant_UsesQualifier" RIGHT JOIN "tblPlant_Uses" ON "tblPlant_UsesQualifier"."UsesId" = "tblPlant_Uses"."UsesFk" where "PlantFk"=</SQLPhyllaca>
+		<SQLPhyllaca Order="4" Resume="true">select "tblPlant_FormVegetQualifier"."VegetFormDesc" from "tblPlant_FormVegetQualifier" RIGHT JOIN "tblPlant_FormVeget" ON "tblPlant_FormVegetQualifier"."VegetFormId" = "tblPlant_FormVeget"."VegetFormFk" where "PlantFk"=</SQLPhyllaca>		
+		<SQLPhyllaca Order="5" Resume="true">select "tblLoc_DistFitoDescQualifier"."DistFitoDesc" from "tblLoc_DistFitoDescQualifier" RIGHT JOIN "tblPlant_DistFito" ON "tblPlant_DistFito"."DistFitoFk" = "tblLoc_DistFitoDescQualifier"."DistFitoQualifierId" where "PlantIdFk"=</SQLPhyllaca>		
+		<SQLPhyllaca Order="6" Resume="true">select "tblLoc_MunicipioQualifier"."MunicipioDesc" from "tblLoc_MunicipioQualifier" RIGHT JOIN "tblPlant_Municipio" ON "tblLoc_MunicipioQualifier"."MunicipioId" = "tblPlant_Municipio"."MunicipioFk" where "PlantFk"=</SQLPhyllaca>				
+		<SQLPhyllaca Order="7" Image="true">select "tblImages"."ImageId" as "Id", "tblImages"."Folder" || '/' || "tblImages"."FileName" as "Path" from "tblImages" RIGHT JOIN "tblPlant_Images" ON "tblImages"."ImageId" = "tblPlant_Images"."ImageFk" where "PlantFk"=</SQLPhyllaca>				
+		<ShowPhyllaca Order="1" field="rkqlDesc">Nivel taxon%F3mico%3A</ShowPhyllaca>
+		<ShowPhyllaca Order="1" field="FullName">Nombre del taxon%3A</ShowPhyllaca>
+		<ShowPhyllaca Order="1" field="Endangered">Amenazada%3A</ShowPhyllaca>
+		<ShowPhyllaca Order="1" field="IUCNDesc">Categor%EDa+de+amenaza%3A</ShowPhyllaca>
+		<ShowPhyllaca Order="1" field="BiologType">Tipo+biol%F3gico:</ShowPhyllaca>
+		<ShowPhyllaca Order="1" field="HabitDesc">H%E1bito:</ShowPhyllaca>
+		<ShowPhyllaca Order="1" field="Corology" memo="true">Corolog%EDa:</ShowPhyllaca>
+		<ShowPhyllaca Order="1" field="Endemic">End%E9mico:</ShowPhyllaca>
+		<ShowPhyllaca Order="1" field="WordDistribDesc">Distribuci%F3n+geogr%E1fica+mundial:</ShowPhyllaca>
+		<ShowPhyllaca Order="2" field="Vernam">Nombre com%FAn:</ShowPhyllaca>
+		<ShowPhyllaca Order="3" field="UsesDesc">Usos:</ShowPhyllaca>
+		<ShowPhyllaca Order="4" field="VegetFormDesc">Formaci%F3n+vegetal:</ShowPhyllaca>
+		<ShowPhyllaca Order="5" field="DistFitoDesc">Distritos+fitogeogr%E1ficos:</ShowPhyllaca>
+		<ShowPhyllaca Order="6" field="MunicipioDesc">Provincia/municipio:</ShowPhyllaca>
+		<ShowPhyllaca Order="7" field="Path">Path</ShowPhyllaca>
+		<ShowPhyllaca Order="7" field="ImageHint">ImageHint</ShowPhyllaca>
+		
+		<checkCons name="Cons" value="1">Colecciones conservadas (herbarios)</checkCons>
+		
+		<checkLoc name="Loc" value="1">Localidades*</checkLoc>
+		<SearchSQLLoc>select "LocalityName" as "Locality", "LatDeg" || ',' || "LatMin" || "LatDir" as "Lat", "LonDeg" || "," || "LonMin" || "LonDir" as "Lon", "Paper" as "GridPaper","Cx" || 'x ' || "Cy" || 'y' as "Grid", "MunicipioDesc" as "Municipality" from "tblLoc_Locality" left join "tblLoc_MunicipioQualifier" on ("Province_CommunityFk"="MunicipioId") where (upper("LocalityName") like '%__textoUpper__%') order by "LocalityName"</SearchSQLLoc>
+		
+		<checkSoft name="Soft" value="1">Softwares/Programas informAticos</checkSoft>
+		
+		<checkDict name="Dict" value="1">Diccionarios (Thesaurus)</checkDict>
+		
+		<checkAme name="Ame" value="1">Amenazadas (IUCN)</checkAme>
+		
+		<checkBPH name="BPH" value="1">Botanicum Periodicum Huntianum (BPH)</checkBPH>
+		
+		<checkTL2 name="TL2" value="1">Taxonomic Literature 2 (TL2)</checkTL2>
+		
+		<checkInv name="Inv" value="1">Inventarios biolOgicos</checkInv>
+		
+		<checkMed name="Med" value="1">Medicinales (Bixa)</checkMed>
+		
+		
+	 </Show>
+</WebConfig>
+

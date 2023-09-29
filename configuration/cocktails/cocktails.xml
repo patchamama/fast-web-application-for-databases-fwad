@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Main>
+  <connection>
+    <inc>cocktails/db.xml</inc>
+  </connection>
+  <configuration>
+    <lang value="es">Espa%F1ol</lang>
+    <lang value="en">English</lang>
+  </configuration>
+  <tables>
+    <table fieldid="id" id="id" pk="id" autonumeric="id:gen_cocktailsid" fk="id=ing_cock.ingcockid" name="cocktails"/>
+    <table name="ing_cock" fieldid="ingcockid" id="ingcockid" pk="ingcockid" autonumeric="ingcockid:gen_ingcockid"/>
+  </tables>
+  <searchs lang="es">
+    <sql tableid="cocktails" fieldid="id" msg="Cocktails%3A" id="id" desc="Nombre" orderby="Nombre">select+%2A+from+cocktails+left+join+ing_cock+on+cocktails.id=ing_cock.ingcockid+</sql>
+  </searchs>
+  <elements lang="es">
+    <section type="textbox">Marcas</section>
+    <element type="hidden" table="cocktails" field="id"/>
+    <element type="hidden" table="ing_cock" field="ingcockid"/>
+    <element type="textbox" table="cocktails" field="Nombre" len="100" lenedit="100" mandatory="true" br="true">Nombre%3A</element>
+    <element type="textbox" table="cocktails" field="Precio" len="5">Precio%3A</element>
+    <element type="textbox" table="cocktails" field="Unidad" len="30">Unidad%3A</element>
+    <element type="memo" table="cocktails" field="Comentario" len="100" lines="10">Comentarios%3A</element>
+    <element type="listbox_listbox" table="ing_cock" field="ingredientesfk" sql="SELECT+%2A+FROM+ingredientes+order+by+Nombre" huckfield="ingcockid" id="ID" desc="Nombre" cols="4" delimitedchar="%2C" orderfield="cocktailsfk">Ingredientes%3A</element>
+    <element type="button_jscript" action="list%3Ddocument.Form.ing_cock__ingredientesfk_listbox%3B%0D%0Avvvtemp%3D%22%22%3B%0D%0Afor%28var+i%3D0%3B+i%3Clist.options.length%3B+i%2B%2B%29%0D%0A%09%7B%0D%0A%09if+%28vvvtemp%21%3D%22%22%29+%7B+vvvtemp+%3D+vvvtemp%2B%22%2C+%22+%7D%0D%0A%09vvvtemp+%3D+vvvtemp%2Blist.options%5Bi%5D.text%3B%0D%0A%09%7D%0D%0Adocument.Form.cocktails__formula.value%3Dvvvtemp%3B">Resumir+para+f%F3rmula</element>
+    <element type="memo" table="cocktails" field="formula" len="100" lines="10">F%F3rmula%3A</element>
+  </elements>
+</Main>

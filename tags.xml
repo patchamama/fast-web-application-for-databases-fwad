@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main> 
+	<types>
+		<!-- 	Attributes-> attrs, equivalent
+			attrs-> m: mandatory, o: optional
+			equivalent->type equivalent
+		--> 
+		<type attrs="o:table;o:field">hidden</type>
+		<type attrs="o:br">label</type>
+		<type attrs="o:br;m:id;">frame</type>
+		<type attrs="m:table;m:field;o:default;o:Depend;o:mandatory;o:br;o:checked;o:unchecked;o:statusmsg;o:help" equivalent="checkbox">comboboxYN</type>
+		<type attrs="m:table;m:field;o:default;o:Depend;o:mandatory;o:br;o:checked;o:unchecked;o:statusmsg;o:help" equivalent="comboboxYN">checkbox</type>
+		<type attrs="m:Depend;o:br;m:view;o:cols;o:rows;o:redirect;o:help">image_view</type>
+		<type attrs="m:table;m:field;m:sql;m:id;m:desc;o:default;o:Depend;o:mandatory;o:br;o:statusmsg;o:help" equivalent="radio">combobox</type>
+		<type attrs="m:table;m:field;m:sql;m:id;m:desc;o:default;o:Depend;o:cols;o:mandatory;o:br;o:statusmsg;o:help" equivalent="combobox">radio</type>
+		<type attrs="m:table;m:field;o:default;o:len;o:Depend;o:mandatory;o:br;o:statusmsg;o:help">textbox</type>
+		<type attrs="m:table;m:field;o:default;o:Depend;o:mandatory;o:br;o:statusmsg;o:help">date</type>
+		<type attrs="m:table;m:field;o:default;o:len;o:Depend;o:mandatory;o:br;o:statusmsg;o:help">link</type>
+		<type attrs="m:table;m:field;m:sql;m:id;m:desc;o:len;o:default;o:Depend;o:mandatory;o:br;o:statusmsg;o:help;m:pathcopy;m:pathref">textbox_combobox_link_file</type>
+		<type attrs="m:table;m:field;m:sql;m:id;m:desc;o:len;o:default;o:Depend;o:mandatory;o:br;o:statusmsg;o:help">textbox_combobox</type>
+		<type attrs="m:table;m:field;m:sql;m:id;m:desc;o:len;o:default;o:Depend;o:mandatory;o:br;o:statusmsg;o:help">textbox_combobox_link</type>
+		<type attrs="m:table;m:field;m:sql;m:id;m:desc;o:len;o:default;o:Depend;o:mandatory;o:br;o:statusmsg;o:help;m:pathcopy;m:pathref">textbox_combobox_file</type>
+		<type attrs="m:table;m:field;o:default;o:len;o:lines;o:Depend;o:mandatory;o:br;o:statusmsg;o:help">memo</type>
+		<type attrs="m:table;m:field;o:fieldst;m:sql;m:id;m:desc;o:len;o:default;o:Depend;o:mandatory;o:br;o:statusmsg;o:help">textbox_list</type>
+		<type attrs="m:table;m:field;m:sql;m:id;m:desc;o:len;o:default;o:Depend;o:mandatory;o:br;o:statusmsg;o:help">textbox_add</type>
+		<type attrs="m:table;m:field;m:sql;m:id;m:desc;o:len;o:rows;o:summaryfield;o:default;o:Depend;o:mandatory;o:br;o:statusmsg;o:help">listbox_combobox</type>
+		<type attrs="m:table;m:field;m:sql;m:id;m:desc;o:len;o:rows;o:summaryfield;o:default;o:Depend;o:mandatory;o:br;o:statusmsg;o:help">listbox_listbox</type>
+	</types>
+</main>
+
