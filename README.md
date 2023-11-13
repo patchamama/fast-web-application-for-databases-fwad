@@ -1,6 +1,6 @@
 # Fast Web Application for Databases (FWAD)
 
-The Spanish version of this documentation can be accessed [here](README.es.md)
+_The Spanish version of this documentation can be accessed [here](README.es.md)_
 
 **THIS PROGRAM IS NOT FUNCTIONAL WITH CURRENT NEWER VERSIONS OF PHP**. The application worked with php 5.5 and was run on windows computers using [XAMPP](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/5.5.27/)
 
@@ -12,7 +12,7 @@ FWAD was developed between 2004-2006 in response to the development of an applic
 
 In order to meet these requirements, this program was created to read an easily modified _xml configuration file_ that would allow the program to quickly adapt to the conditions of each desired data model without having to make changes in the main program code, and that is where the idea for this program came from, which is nothing more than an interpreter of configuration files (xml) and which generates forms and queries (similar to a modernORM) depending on this configuration file.
 
-I have an ambiguous relationship with this application because on the one hand I am proud of the functionality achieved and the most intelligent solution thought to meet the necessary requirements (based of a app that read a general xml configuration file and change it behaivor...), but on the other hand due to the lack of experience in programming at this level of such a complex program, it was done without taking into account the use of php frameworks (only jQuery was used) and using a simple text editor like [notepad++](https://notepad-plus-plus.org), so the main app code (`run.php`) does not use _clean coding_ principles and is _spaghetti code_ with more than 6000 lines which can make it difficult to understand and maintain. _In addition, the application was made entirely in Cuba without internet access and using documentation contained in books or pdfs._
+I have an ambiguous relationship with this application because on the one hand I am proud of the functionality achieved and the most intelligent solution thought to meet the necessary requirements (based of a app that read a general xml configuration file and change it behaivor...), but on the other hand due to the lack of experience in programming at this level of such a complex program, it was done without taking into account the use of php frameworks (only jQuery was used) and using a simple text editor like [Notepad++](https://notepad-plus-plus.org), so the main app code (`run.php`) does not use _clean coding_ principles and is _spaghetti code_ with more than 6000 lines which can make it difficult to understand and maintain. _In addition, the application was made entirely in Cuba without internet access and using documentation contained in books or pdfs._
 
 # Objectives
 
