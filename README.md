@@ -59,6 +59,7 @@ Instructions, as an alternative for use on windows, linux and also on MacOSx [he
 
 # Pending
 
+- Create Docker with xampp 4.5 and move all the content there...
 - Migrate the entire application to a more modern version of php such as version 7 or 8.
 - Refactor all the code and separate it into files (libraries) to allow better code reuse and maintenance.
 - Migrate the application for use with a modern php framework such as `Symfony` or `Laravel`, or separate the application into a REST API on the back end using these frameworks or other faster frameworks such as `Phalcon` or `Slim` and a more modern web interface design such as `React` or `VueJS` for the View.
